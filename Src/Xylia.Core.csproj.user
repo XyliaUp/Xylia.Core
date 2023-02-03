@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>F:\Resources\文档\Programming\C#\项目\Xylia\core\Xylia\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Windows\Controls\Treeview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Windows\Forms\Announcement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\Forms\Editor\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\Forms\GetDataPath\DatSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Windows\Forms\Editor\PublicSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
