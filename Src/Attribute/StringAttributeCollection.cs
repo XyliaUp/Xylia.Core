@@ -1,10 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
-
-using HtmlAgilityPack;
 
 namespace Xylia.Attribute
 {
@@ -23,12 +20,6 @@ namespace Xylia.Attribute
 		public StringAttributeCollection(XmlAttributeCollection attributes)
 		{
 			foreach (XmlAttribute attribute in attributes)
-				this.Add(new MyAttribute(attribute.Name, attribute.Value));
-		}
-
-		public StringAttributeCollection(HtmlAttributeCollection attributes)
-		{
-			foreach (HtmlAttribute attribute in attributes)
 				this.Add(new MyAttribute(attribute.Name, attribute.Value));
 		}
 
@@ -54,8 +45,6 @@ namespace Xylia.Attribute
 	{
 		#region 创建属性集合
 		public static StringAttributeCollection CreateAttributeCollection(this XmlNode xmlNode) => new(xmlNode.Attributes);
-
-		public static StringAttributeCollection CreateAttributeCollection(this HtmlNode HtmlNode) => new(HtmlNode.Attributes);
 
 		public static StringAttributeCollection CreateAttributeCollection(this XElement xElement) => new(xElement.Attributes());
 		#endregion

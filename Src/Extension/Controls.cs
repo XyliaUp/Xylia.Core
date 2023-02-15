@@ -5,8 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-using HZH_Controls.Forms;
-
 namespace Xylia.Extension
 {
 	public static class ControlEx
@@ -47,9 +45,6 @@ namespace Xylia.Extension
 
 			tip.SetToolTip(control, Tip);
 		}
-
-
-
 
 
 		/// <summary>
@@ -151,7 +146,7 @@ namespace Xylia.Extension
 		public static void SetClipboard(this string text, bool ShowTip = false)
 		{
 			Clipboard.SetDataObject(text, true);
-			if (ShowTip) FrmTips.ShowTipsSuccess("已粘贴至剪切板");
+			//if (ShowTip) FrmTips.ShowTipsSuccess(null, "已粘贴至剪切板");
 		}
 		#endregion
 	}

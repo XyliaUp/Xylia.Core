@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Xylia.Extension
 {
-    public class ConvertClass
+	public class ConvertClass
     {
         /// <summary>
         /// 构造实例对象

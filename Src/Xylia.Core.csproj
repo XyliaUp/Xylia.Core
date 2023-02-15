@@ -1,27 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net5.0-windows</TargetFramework>
+		<TargetFrameworks>net5.0-windows</TargetFrameworks>
 		<OutputType>Library</OutputType>
 		<RootNamespace>Xylia</RootNamespace>
 		<AssemblyName>Xylia</AssemblyName>
-		<UseWindowsForms>true</UseWindowsForms>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<Deterministic>false</Deterministic>
-		<Version>1.0.3.1</Version>
+		<Version>1.0.3.8</Version>
 		<AssemblyVersion>1.0.2.*</AssemblyVersion>
+		<UseWindowsForms>true</UseWindowsForms>
 	</PropertyGroup>
-
-
-
-	<ItemGroup>
-		<Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
-			<SpecificVersion>False</SpecificVersion>
-			<HintPath>..\..\..\..\..\Public\HtmlAgilityPack.dll</HintPath>
-		</Reference>
-		<Reference Include="HZH_Controls">
-			<HintPath>..\..\..\net_winform_custom_control\HZH_Controls\HZH_Controls\bin\Release\net5.0-windows\HZH_Controls.dll</HintPath>
-		</Reference>
-	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="Files\.Excel\ExcelInfo.cs" />
 		<Compile Include="Files\.Excel\Extension\Row.cs" />
@@ -31,37 +19,20 @@
 		<Compile Include="Files\.Xml\INode.cs" />
 		<Compile Include="Files\.Xml\XmlInfo.cs" />
 		<Compile Include="Files\.Xml\XmlProperty.cs" />
-		<Compile Update="Properties\Resources\Resource.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Resource.resx</DependentUpon>
-		</Compile>
-		<Compile Update="Windows\Controls\Treeview.cs" />
-		<Compile Update="Windows\Forms\Editor\CustomRichTextBox.cs">
-			<SubType>Component</SubType>
-		</Compile>
-		<Compile Update="Windows\Forms\Editor\Settings.Designer.cs">
-			<DesignTimeSharedInput>True</DesignTimeSharedInput>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Settings.settings</DependentUpon>
-		</Compile>
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="MetroFramework" Version="1.2.0.3" />
+		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1518.46" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 		<PackageReference Include="NPOI" Version="2.6.0" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Update="Properties\Resources\Resource.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>Resource.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
+		<PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-		<None Update="Windows\Forms\Editor\Settings.settings">
-			<Generator>PublicSettingsSingleFileGenerator</Generator>
-			<LastGenOutput>Settings.Designer.cs</LastGenOutput>
-		</None>
+	  <EmbeddedResource Update="Net\Update\Properties\Resources.resx">
+	    <Generator></Generator>
+	    <CustomToolNamespace>AutoUpdaterDotNET.Properties</CustomToolNamespace>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="Net\Update\Properties\Resources.zh.resx">
+	    <CustomToolNamespace>AutoUpdaterDotNET.Properties</CustomToolNamespace>
+	  </EmbeddedResource>
 	</ItemGroup>
 </Project>

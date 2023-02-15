@@ -46,10 +46,8 @@ namespace Xylia.Extension
 			Type CurType;
 			if (member is FieldInfo field) CurType = field.FieldType;
 			else if (member is PropertyInfo property) CurType = property.PropertyType;
-			//else if (member is MethodInfo method) CurType = method.ReturnType;
 			else return false;
-			// throw new ArgumentException(member + "是未支持的对象");
-
+	
 			return HasImplementedRawGeneric(CurType, generic);
 		}
 		#endregion

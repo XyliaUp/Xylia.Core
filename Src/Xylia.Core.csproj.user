@@ -4,19 +4,16 @@
     <_LastSelectedProfileId>F:\Resources\文档\Programming\C#\项目\Xylia\core\Xylia\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Windows\Controls\Treeview.cs">
+    <Compile Update="Net\Update\DownloadUpdateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Net\Update\MyWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Windows\Forms\Announcement.cs">
+    <Compile Update="Net\Update\RemindLaterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Windows\Forms\Editor\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Windows\Forms\GetDataPath\DatSelect.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Windows\Forms\Editor\PublicSet.cs">
+    <Compile Update="Net\Update\UpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

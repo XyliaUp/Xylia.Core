@@ -7,11 +7,17 @@ namespace Xylia.Extension
 	{
 		public static long ToLong(this string Self) => long.TryParse(Self, out var result) ? result : 0;
 
-		public static int ToInt(this string Self) => int.TryParse(Self, out var result) ? result : 0;
+		public static int ToInt(this string Self) => int.TryParse(Self?.RemoveSuffixString(":0"), out var result) ? result : 0;
 
 		public static byte ToByte(this string Self) => byte.TryParse(Self, out var result) ? result : (byte)0;
 
 		public static short ToShort(this string Self) => short.TryParse(Self, out var result) ? result : (byte)0;
+
+
+		public static float ToFloat(this string Self) => float.TryParse(Self, out var result) ? result : 0;
+
+		public static double ToDouble(this string Self) => double.TryParse(Self, out var result) ? result : 0;
+
 
 
 		/// <summary>

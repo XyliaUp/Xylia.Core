@@ -27,10 +27,7 @@ namespace Xylia.Extension
 		/// <param name="AccurateToMilliseconds">是否精确到毫秒</param>
 		/// <returns>返回一个日期时间</returns>
 		public static DateTime GetDateTime(this long TimeStamp, bool AccurateToMilliseconds = false)
-		{
-			DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1)); // 当地时区
-			return startTime.AddTicks(TimeStamp * (AccurateToMilliseconds ? 10000 : 10000000));
-		}
+			=> new DateTime(1970, 1, 1).ToLocalTime().AddTicks(TimeStamp * (AccurateToMilliseconds ? 10000 : 10000000));
 
 		public static long GetTimeStamp(this DateTime DateTime, bool AccurateToMilliseconds = false)
 			=> DateTime.ToUniversalTime().Ticks / (AccurateToMilliseconds ? 10000 : 10000000) - 62135596800;

@@ -9,11 +9,9 @@ namespace Xylia.Windows.Framework
 	public class KeyboardHook : GlobalHook
 	{
 		#region Events  
-
 		public event KeyEventHandler KeyDown;
 		public event KeyEventHandler KeyUp;
 		public event KeyPressEventHandler KeyPress;
-
 		#endregion
 
 		#region Constructor  

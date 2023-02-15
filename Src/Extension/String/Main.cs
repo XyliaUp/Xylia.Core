@@ -156,6 +156,9 @@ namespace Xylia.Extension
 		/// <returns></returns>
 		public static string RemovePrefixString(this string self, string str)
 		{
+			if (string.IsNullOrWhiteSpace(self))
+				return null;
+
 			string strRegex = @"^(" + Regex.Escape(str) + ")";
 			return Regex.Unescape(Regex.Replace(self, strRegex, ""));
 		}
@@ -168,6 +171,9 @@ namespace Xylia.Extension
 		/// <returns></returns>
 		public static string RemoveSuffixString(this string self, string str)
 		{
+			if (string.IsNullOrWhiteSpace(self))
+				return null;
+
 			string strRegex = @"(" + Regex.Escape(str) + ")" + "$";
 			return Regex.Unescape(Regex.Replace(self, strRegex, ""));
 		}
@@ -194,6 +200,24 @@ namespace Xylia.Extension
 
 			return sb.ToString();
 		}
+
+		public static string TitleLowerCase(this string line)
+		{
+			StringBuilder sb = new();
+			for (int i = 0; i < line.Length; i++)
+			{
+				if (line[i] >= 'A' && line[i] <= 'Z')
+				{
+					if (i != 0) sb.Append('-');
+
+				   sb.Append((char)(line[i] + 32));
+				}
+				else sb.Append(line[i]);
+			}
+
+			return sb.ToString();
+		}
+
 
 
 		public static string JudgeLineFeed(this string Self) => string.IsNullOrEmpty(Self) ? null : (Self + "\n");

@@ -77,7 +77,6 @@ namespace Xylia.Extension
 		/// <returns></returns>
 		public static T ToEnum<T>(this string EnumItem, bool Extension = true) where T : Enum => EnumItem.TryParseToEnum(out T Val, Extension) ? Val : default;
 
-
 		/// <summary>
 		/// 在指定<see langword="枚举类"/>的情况下，将枚举值文本转换为<see cref="Enum" />对象
 		/// </summary>
@@ -108,50 +107,30 @@ namespace Xylia.Extension
 		/// </summary>
 		/// <param name="EnumItem"></param>
 		/// <param name="type"></param>
-		/// <param name="Value"></param>
+		/// <param name="value"></param>
 		/// <param name="Extension"></param>
 		/// <returns></returns>
-		public static bool TryParseToEnum(this string EnumItem, Type type, out object Value, bool Extension)
+		public static bool TryParseToEnum(this string EnumItem, Type type, out object? value, bool Extension)
 		{
-			Value = default;
+			value = default;
 			if (string.IsNullOrWhiteSpace(EnumItem)) return false;
+
+			bool flag = byte.TryParse(EnumItem, out var number);
+
 
 			#region 扩展模式
 			if (Extension)
 			{
 				if (EnumItem.Contains('-'))
-				{
-					bool Status = false;
+					return Enum.TryParse(type, EnumItem.Replace("-", null), true, out value);
 
-					object Result = default;
-					if (!Status) Status = EnumItem.Replace("-", null).TryParseToEnum(type, out Result);
-					if (!Status) Status = EnumItem.Replace("_", null).TryParseToEnum(type, out Result);
-					if (!Status) Status = EnumItem.Replace("-", "_").TryParseToEnum(type, out Result);
-
-					Value = Result;
-					return Status;
-				}
-
-				//对数值类型枚举支持
-				if (byte.TryParse(EnumItem, out _) && ("N" + EnumItem).TryParseToEnum(type, out Value)) return true;
+				// 对数值类型枚举支持
+				if (flag && Enum.TryParse(type, "N" + EnumItem, true, out value))
+					return true;
 			}
 			#endregion
 
-			return EnumItem.TryParseToEnum(type, out Value);
-		}
-
-		public static bool TryParseToEnum(this string EnumItem, Type type, out object Value)
-		{
-			try
-			{
-				Value = Enum.Parse(type, EnumItem, true);
-				return true;
-			}
-			catch
-			{
-				Value = default;
-				return false;
-			}
+			return Enum.TryParse(type, EnumItem, true, out value);
 		}
 		#endregion
 	}

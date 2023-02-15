@@ -33,6 +33,7 @@ namespace Xylia.Net
 			return new Uri(Combine(key, info.p));
 		}
 
+
 		public struct FileInfo
 		{
 			public string key;
