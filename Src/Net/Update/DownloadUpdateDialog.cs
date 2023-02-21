@@ -155,7 +155,7 @@ namespace AutoUpdaterDotNET
                     }
 
                     StringBuilder arguments =
-                        new StringBuilder($"\"{tempPath}\" --output \"{extractionPath}\" --executable \"{executablePath}\"");
+                        new StringBuilder($"\"{tempPath}\" \"{extractionPath}\" \"{executablePath}\"");
 
                     if (AutoUpdater.ClearAppDirectory)
                     {

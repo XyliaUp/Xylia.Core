@@ -6,7 +6,7 @@
 		<AssemblyName>Xylia</AssemblyName>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<Deterministic>false</Deterministic>
-		<Version>1.0.3.8</Version>
+		<Version>1.0.3.11</Version>
 		<AssemblyVersion>1.0.2.*</AssemblyVersion>
 		<UseWindowsForms>true</UseWindowsForms>
 	</PropertyGroup>
@@ -24,7 +24,6 @@
 		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.1518.46" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
 		<PackageReference Include="NPOI" Version="2.6.0" />
-		<PackageReference Include="System.Resources.Extensions" Version="7.0.0" />
 	</ItemGroup>
 	<ItemGroup>
 	  <EmbeddedResource Update="Net\Update\Properties\Resources.resx">
