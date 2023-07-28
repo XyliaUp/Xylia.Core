@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<LangVersion>11.0</LangVersion>
+		<TargetFrameworks>net6.0-windows</TargetFrameworks>
+		<UseWindowsForms>true</UseWindowsForms>
+
+		<Authors>Xylia</Authors>
+		<Company>Xylia</Company>
+		<AssemblyVersion>1.0.2.*</AssemblyVersion>
+		<Version>1.0.4.34</Version>
+
+		<OutputType>Library</OutputType>
+		<RootNamespace>Xylia</RootNamespace>
+		<AssemblyName>Xylia</AssemblyName>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<Deterministic>false</Deterministic>
+		<DebugType>none</DebugType>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageOutputPath>..\..\packages</PackageOutputPath>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="NPOI" Version="2.6.0" />
+		<PackageReference Include="Vanara.PInvoke.Gdi32" Version="3.4.15" />
+		<PackageReference Include="Vanara.PInvoke.Kernel32" Version="3.4.15" />
+		<PackageReference Include="Vanara.PInvoke.User32" Version="3.4.15" />
+	</ItemGroup>
+</Project>
