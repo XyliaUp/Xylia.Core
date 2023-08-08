@@ -1,4 +1,6 @@
-﻿namespace Xylia.Extension;
+﻿using System.Security.Policy;
+
+namespace Xylia.Extension;
 public static class Linq
 {
     #region Array
@@ -11,20 +13,22 @@ public static class Linq
     public static void For<T>(ref T[] array, Func<int, T> func)
     {
         ArgumentNullException.ThrowIfNull(array);
-        For(ref array, array.Length, func);
+		array = For(array.Length, func);
     }
 
-    public static void For<T>(ref T[] array, int Num, Func<int, T> func)
-    {
-        array = new T[Num];
-        for (int INDEX = 0; INDEX < Num; INDEX++)
-            array[INDEX] = func(INDEX + 1);
-    }
-    #endregion
+	public static T[] For<T>(int Num, Func<int, T> func)
+	{
+		var array = new T[Num];
+		for (int INDEX = 0; INDEX < Num; INDEX++)
+			array[INDEX] = func(INDEX + 1);
+
+        return array;
+	}
+	#endregion
 
 
 
-    public static string Aggregate(this IEnumerable<string> source, string comma, Func<string, string> func = null)
+	public static string Aggregate(this IEnumerable<string> source, string comma, Func<string, string> func = null)
     {
         ArgumentNullException.ThrowIfNull(source);
 

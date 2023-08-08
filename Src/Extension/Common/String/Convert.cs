@@ -1,19 +1,17 @@
 ﻿namespace Xylia.Extension;
 public static partial class String
 {
-	public static long ToLong(this string s) => long.TryParse(s, out var result) ? result : 0;
-
-	public static int ToInt(this string s) => int.TryParse(s, out var result) ? result : 0;
-
 	public static byte ToByte(this string s) => byte.TryParse(s, out var result) ? result : (byte)0;
+	public static sbyte ToInt8(this string s) => sbyte.TryParse(s, out var result) ? result : (sbyte)0;
+	public static short ToInt16(this string s) => short.TryParse(s, out var result) ? result : (short)0;
+	public static int ToInt32(this string s) => int.TryParse(s, out var result) ? result : 0;
+	public static long ToInt64(this string s) => long.TryParse(s, out var result) ? result : 0;
+	public static float ToFloat32(this string s) => float.TryParse(s, out var result) ? result : 0;
 
-	public static short ToShort(this string s) => short.TryParse(s, out var result) ? result : (short)0;
 
-	public static float ToFloat(this string s) => float.TryParse(s, out var result) ? result : 0;
+
 
 	public static double ToDouble(this string s) => double.TryParse(s, out var result) ? result : 0;
-
-
 
 	public static bool ToBool(this string s, out bool Result)
 	{
@@ -48,5 +46,16 @@ public static partial class String
 
 		if (ToBool(s, out bool Result)) return Result;
 		else return null;
+	}
+
+
+
+
+	public static long? Calculate(this string self)
+	{
+		if (string.IsNullOrWhiteSpace(self)) return null;
+
+		if (long.TryParse(self, out long r)) return r;
+		else return (int)new System.Data.DataTable().Compute(self, "false");
 	}
 }

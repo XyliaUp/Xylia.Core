@@ -18,13 +18,10 @@ public static class Bytes
 
 		var inputByteArray = new byte[Hex.Length / 2];
 		for (var x = 0; x < inputByteArray.Length; x++)
-		{
-			var i = Convert.ToInt32(Hex.Substring(x * 2, 2), 16);
-			inputByteArray[x] = (byte)i;
-		}
+			inputByteArray[x] = (byte)Convert.ToInt32(Hex.Substring(x * 2, 2), 16);
+
 		return inputByteArray;
 	}
-
 
 
 
@@ -56,9 +53,9 @@ public static class Bytes
 			firstChar = s; //把第2个字符赋值给第一个字符
 		}
 
-		if (count > 1) builder.Append($"[{count}]");  //如果数量大于1，把count追加到StringBuilder中
+		if (count > 1) builder.Append($"[{count}]");  
 
-		if (count <= 1 || firstChar != '0') builder.Append(firstChar);//最后把字符追加到StringBuilder中
+		if (count <= 1 || firstChar != '0') builder.Append(firstChar);
 
 		return builder.ToString();
 	}
@@ -71,7 +68,7 @@ public static class Bytes
 		StringBuilder builder = new();
 		for (int i = 0; i < Cipher.Length; i++)
 		{
-			char s = Cipher[i];   //字符串中第2个字符
+			char s = Cipher[i];   
 
 			if (i + 1 != Cipher.Length && s == '[')
 			{

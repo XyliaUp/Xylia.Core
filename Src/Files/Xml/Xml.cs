@@ -38,11 +38,9 @@ public static partial class Files
 
 
 
-	public static TResult GetObject<TResult>(this string xmlString, string rootName = null)
+	public static TResult GetObject<TResult>(this string xmlString)
 	{
-		rootName ??= typeof(TResult).Name.ToLower();
-
-		var serializer = new XmlSerializer(typeof(TResult), new XmlRootAttribute(rootName));
+		var serializer = new XmlSerializer(typeof(TResult));
 		return (TResult)serializer.Deserialize(new StringReader(xmlString));
 	}
 

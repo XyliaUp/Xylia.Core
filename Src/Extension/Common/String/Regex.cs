@@ -1,7 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
 namespace Xylia.Extension;
-
 public static partial class String
 {
 	/// <summary>

@@ -9,14 +9,9 @@ public class SortByString : IComparer<string>
     public SortByString(bool IgnoreCase) => this.IgnoreCase = IgnoreCase;
     #endregion
 
-    /// <summary>
-    /// 使用 Common 规则
-    /// </summary>
+
     public bool Common { get; set; } = true;
 
-    /// <summary>
-    /// 使用 IgnoreCase 规则
-    /// </summary>
     public bool IgnoreCase { get; set; } = false;
 
 
@@ -32,9 +27,6 @@ public class SortByString : IComparer<string>
 
 public static class Method
 {
-    /// <summary>
-    /// 排序规则
-    /// </summary>
     [Flags]
     public enum SortRule
     {
@@ -54,15 +46,6 @@ public static class Method
         IgnoreCase = 4,
     }
 
-
-
-    /// <summary>
-    /// 核心排序方法
-    /// </summary>
-    /// <param name="TextA"></param>
-    /// <param name="TextB"></param>
-    /// <param name="SortRule"></param>
-    /// <returns></returns>
     public static int StrCompare(object TextA, object TextB, SortRule SortRule = SortRule.Common)
     {
         #region 初始化字符集

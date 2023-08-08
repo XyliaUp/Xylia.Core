@@ -6,8 +6,8 @@
 
 		<Authors>Xylia</Authors>
 		<Company>Xylia</Company>
-		<AssemblyVersion>1.0.2.*</AssemblyVersion>
-		<Version>1.0.4.34</Version>
+		<AssemblyVersion>1.0.4.*</AssemblyVersion>
+		<Version>1.0.4.43</Version>
 
 		<OutputType>Library</OutputType>
 		<RootNamespace>Xylia</RootNamespace>
@@ -25,6 +25,7 @@
 		<PackageReference Include="NPOI" Version="2.6.0" />
 		<PackageReference Include="Vanara.PInvoke.Gdi32" Version="3.4.15" />
 		<PackageReference Include="Vanara.PInvoke.Kernel32" Version="3.4.15" />
+		<PackageReference Include="Vanara.PInvoke.Multimedia" Version="3.4.15" />
 		<PackageReference Include="Vanara.PInvoke.User32" Version="3.4.15" />
 	</ItemGroup>
 </Project>
