@@ -24,7 +24,6 @@ public static class Bytes
 	}
 
 
-
 	public static string StringZip(this string Text)
 	{
 		if (string.IsNullOrWhiteSpace(Text))

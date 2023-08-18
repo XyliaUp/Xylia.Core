@@ -2,7 +2,6 @@
 using System.Text;
 
 namespace Xylia.Extension;
-
 public static partial class Files
 {
 	public static string GetFileSHA1(this FileInfo FileInfo)
@@ -25,7 +24,6 @@ public static partial class Files
 		}
 		return myBuilder.ToString();
 	}
-
 
 	public static bool IsUsing(this FileInfo FileInfo)
 	{

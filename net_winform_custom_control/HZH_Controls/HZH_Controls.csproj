@@ -12,7 +12,7 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageOutputPath>..\..\..\packages</PackageOutputPath>
 	</PropertyGroup>
-	
+
 	<ItemGroup>
 		<Compile Update="Controls\Charts\FunnelChart\UCFunnelChart.cs">
 			<SubType>UserControl</SubType>
@@ -274,7 +274,20 @@
 		</Compile>
 	</ItemGroup>
 	<ItemGroup>
+		<Folder Include="Designer\" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+	</ItemGroup>
+	<ItemGroup>
 		<EmbeddedResource Include="IconFont\ElegantIcons.ttf" />
+		<EmbeddedResource Include="IconFont\FontAwesome.ttf" />
+	</ItemGroup>
+
+
+
+	<!--
+		<ItemGroup>
 		<Content Include="HandInput\certificate">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
@@ -299,9 +312,6 @@
 		<Content Include="HandInput\sgim_py.bin">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
-		<EmbeddedResource Include="IconFont\FontAwesome.ttf" />
-	</ItemGroup>
-	<ItemGroup>
 		<Content Include="HandInput\HandInput.dll">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
@@ -321,13 +331,5 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
-	<ItemGroup>
-		<Folder Include="Designer\" />
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Remove="Helpers\ITheme.cs" />
-	</ItemGroup>
+	-->
 </Project>
