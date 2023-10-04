@@ -49,8 +49,6 @@ public static partial class String
 	}
 
 
-
-
 	public static long? Calculate(this string self)
 	{
 		if (string.IsNullOrWhiteSpace(self)) return null;

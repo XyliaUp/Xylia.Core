@@ -11,8 +11,6 @@ public static partial class String
 	public static string Decode(this string Text) => HttpUtility.HtmlDecode(XmlConvert.DecodeName(Text));
 
 
-
-
 	public static string ConvertToMD5(this string s, string flag = "x2")
 	{
 		byte[] sor = Encoding.UTF8.GetBytes(s);

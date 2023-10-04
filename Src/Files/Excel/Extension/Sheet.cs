@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.IO;
-using System.Linq;
+﻿using System.Data;
 
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
@@ -67,13 +63,7 @@ public static class SheetEx
 
 	private static int sheetCellNumMax = 12;
 
-	/// <summary>
-	/// 获取sheet表名
-	/// </summary>
-	/// <param name="filePath"></param>
-	/// <param name="Workbook"></param>
-	/// <param name="IncludingEmpty">允许空工作表</param>
-	/// <returns></returns>
+
 	public static string[] GetSheetName(this string filePath, out IWorkbook Workbook, bool IncludingEmpty = false)
 	{
 		#region 初始化
@@ -291,5 +281,4 @@ public static class SheetEx
 		}
 		return dt;
 	}
-
 }

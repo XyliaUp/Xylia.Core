@@ -6,12 +6,12 @@ public static class Bytes
 	public static string ToHex(this byte[] bytes, bool original = false)
 	{
 		string hex = BitConverter.ToString(bytes, 0).Replace("-", string.Empty).ToLower();
-		return original ? hex : hex.StringZip();
+		return original ? hex : hex.Compress();
 	}
 
 	public static byte[] ToBytes(this string Hex)
 	{
-		Hex = Hex.StringUnzip();
+		Hex = Hex.UnCompress();
 		if (string.IsNullOrWhiteSpace(Hex)) 
 			return Array.Empty<byte>();
 
@@ -24,7 +24,7 @@ public static class Bytes
 	}
 
 
-	public static string StringZip(this string Text)
+	public static string Compress(this string Text)
 	{
 		if (string.IsNullOrWhiteSpace(Text))
 			return Text;
@@ -52,14 +52,14 @@ public static class Bytes
 			firstChar = s; //把第2个字符赋值给第一个字符
 		}
 
-		if (count > 1) builder.Append($"[{count}]");  
+		if (count > 1) builder.Append($"[{count}]");
 
 		if (count <= 1 || firstChar != '0') builder.Append(firstChar);
 
 		return builder.ToString();
 	}
 
-	public static string StringUnzip(this string Cipher)
+	public static string UnCompress(this string Cipher)
 	{
 		if (string.IsNullOrWhiteSpace(Cipher))
 			return Cipher;
@@ -67,7 +67,7 @@ public static class Bytes
 		StringBuilder builder = new();
 		for (int i = 0; i < Cipher.Length; i++)
 		{
-			char s = Cipher[i];   
+			char s = Cipher[i];
 
 			if (i + 1 != Cipher.Length && s == '[')
 			{

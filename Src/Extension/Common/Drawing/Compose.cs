@@ -1,4 +1,5 @@
-﻿using System.Drawing.Drawing2D;
+﻿using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace Xylia.Extension;
 public static partial class Drawing
@@ -67,12 +68,6 @@ public static partial class Drawing
 
 	public static Bitmap Thumbnail(this Bitmap bitmap, double ratio) => bitmap.Thumbnail((int)(bitmap.Width * ratio), (int)(bitmap.Height * ratio));
 
-	/// <summary>
-	/// 图片缩放
-	/// </summary>
-	/// <param name="bmp">图片</param>
-	/// <param name="width">目标宽度，若为0，表示宽度按比例缩放</param>
-	/// <param name="height">目标长度，若为0，表示长度按比例缩放</param>
 	public static Bitmap Thumbnail(this Bitmap bitmap, int width, int height)
 	{
 		lock (bitmap)
@@ -106,9 +101,9 @@ public static partial class Drawing
 
 public enum DrawLocation
 {
-	Centre,  //中间
-	TopLeft,     //左上角
-	TopRight,    //右上角
-	BottomLeft,  //左下角
-	BottomRight, //右下角
+	Centre, 
+	TopLeft,    
+	TopRight,   
+	BottomLeft, 
+	BottomRight, 
 }

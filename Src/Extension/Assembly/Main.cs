@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-																				 
+
 namespace Xylia.Extension;
 
 public static class AssemblyEx
@@ -25,7 +25,7 @@ public static class AssemblyEx
 	{
 		Version version = Assembly.GetName().Version;
 
-		return 946656000L.GetDateTime()
+		return new DateTime(2000, 1, 1)
 			.AddDays(version.Build)
 			.AddSeconds(version.Revision * 2);
 	}

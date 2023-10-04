@@ -1,18 +1,13 @@
-﻿using System;
-
-using NPOI.SS.UserModel;
+﻿using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 
 namespace Xylia.Workbook;
 
-public sealed class ExcelInfo : IFile
+public sealed class ExcelInfo 
 {
 	#region Fields
 	public readonly IWorkbook Workbook;
 
-	/// <summary>
-	/// 当前执行的工作表
-	/// </summary>
 	public ISheet MainSheet;
 
 	public ICellStyle style;
@@ -28,7 +23,6 @@ public sealed class ExcelInfo : IFile
 		style = Workbook.CreateStyle();
 	}
 	#endregion
-
 
 	#region 方法
 	int ColumnIndex = 0;

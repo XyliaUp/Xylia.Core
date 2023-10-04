@@ -37,24 +37,8 @@ public static partial class EnumExtension
 	#endregion
 
 	#region Cast
-	/// <summary>
-	/// 在指定<see langword="枚举类"/>的情况下，将枚举值文本转换为<see cref="Enum" />对象
-	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	/// <param name="EnumItem"></param>
-	/// <param name="Extension"></param>
-	/// <returns></returns>
 	public static T ToEnum<T>(this string EnumItem, bool Extension = true) where T : Enum => EnumItem.TryParseToEnum(out T Val, Extension) ? Val : default;
 
-	/// <summary>
-	/// 在指定<see langword="枚举类"/>的情况下，将枚举值文本转换为<see cref="Enum" />对象
-	/// </summary>
-	/// <typeparam name="T"></typeparam>
-	/// <param name="EnumItem"></param>
-	/// <param name="Value"></param>
-	/// <param name="Extension"></param>
-	/// <param name="HideError"></param>
-	/// <returns></returns>
 	public static bool TryParseToEnum<T>(this string EnumItem, out T Value, bool Extension = true, bool HideError = false) where T : Enum
 	{
 		Value = default;
@@ -71,14 +55,6 @@ public static partial class EnumExtension
 		}
 	}
 
-	/// <summary>
-	/// 在指定<see langword="枚举类型"/>的情况下，将枚举值文本转换为<see cref="Enum" />对象
-	/// </summary>
-	/// <param name="EnumItem"></param>
-	/// <param name="type"></param>
-	/// <param name="value"></param>
-	/// <param name="Extension"></param>
-	/// <returns></returns>
 	public static bool TryParseToEnum(this string EnumItem, Type type, out object? value, bool Extension)
 	{
 		value = default;
@@ -86,8 +62,7 @@ public static partial class EnumExtension
 
 		bool flag = byte.TryParse(EnumItem, out var number);
 
-
-		#region 扩展模式
+		#region extra
 		if (Extension)
 		{
 			if (EnumItem.Contains('-'))

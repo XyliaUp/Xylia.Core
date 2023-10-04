@@ -7,7 +7,7 @@ using Xylia.Extension.Class;
 
 namespace Xylia.Xml;
 
-public sealed class XmlInfo : IFile
+public sealed class XmlInfo
 {
 	#region Fields
 	public XmlDocument Doc;

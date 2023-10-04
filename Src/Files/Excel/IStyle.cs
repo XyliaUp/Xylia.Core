@@ -1,5 +1,4 @@
 ﻿namespace Xylia.Workbook;
-
 public class IStyle
 {
 	public NPOI.SS.UserModel.HorizontalAlignment HorizontalAlignment { get; set; } = NPOI.SS.UserModel.HorizontalAlignment.Center;

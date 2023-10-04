@@ -1,4 +1,6 @@
-﻿namespace Xylia.Extension;
+﻿using System.Drawing;
+
+namespace Xylia.Extension;
 public static partial class GraphicsEnetension
 {
     public static SizeF MeasureString(this char Txt, Font Font) => Txt.ToString().MeasureString(Font);

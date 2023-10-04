@@ -1,7 +1,6 @@
 ﻿using NPOI.SS.UserModel;
 
 namespace Xylia.Workbook;
-
 public static class RowEx
 {
 	public static IRow CreateRow(this ISheet sheet, int rownum = -1, ICellStyle style = null)
