@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net7.0</TargetFrameworks>
+		<TargetFrameworks>net6.0</TargetFrameworks>
 		<Authors>Xylia</Authors>
 		<Company>Xylia</Company>
-		<AssemblyVersion>1.0.4.*</AssemblyVersion>
-		<Version>1.0.4.89</Version>
+		<AssemblyVersion>1.0.5.*</AssemblyVersion>
+		<Version>1.0.5.5</Version>
 		<OutputType>Library</OutputType>
 		<RootNamespace>Xylia</RootNamespace>
 		<AssemblyName>Xylia</AssemblyName>
@@ -16,8 +16,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="NPOI" Version="2.6.2" />
 		<PackageReference Include="Vanara.PInvoke.Gdi32" Version="3.4.16" />
 		<PackageReference Include="Vanara.PInvoke.Kernel32" Version="3.4.16" />
 		<PackageReference Include="Vanara.PInvoke.Multimedia" Version="3.4.16" />

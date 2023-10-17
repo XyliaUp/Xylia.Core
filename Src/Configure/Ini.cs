@@ -16,9 +16,9 @@ public class Ini
 	#region Methods
 	public string ReadValue(object section, object key)
 	{
-		var tmp = new StringBuilder();
+		var tmp = new StringBuilder(0x2000);
 
-		var size = Kernel32.GetPrivateProfileString(section.ToString(), key?.ToString(), null, tmp, 2000, path);
+		var size = Kernel32.GetPrivateProfileString(section.ToString(), key?.ToString(), null, tmp, 0x2000, path);
 		return size == 0 ? null : tmp.ToString();
 	}
 
