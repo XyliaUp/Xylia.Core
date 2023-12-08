@@ -67,7 +67,6 @@ public static partial class EnumExtension
             if (EnumItem.Contains('-'))
                 return Enum.TryParse(type, EnumItem.Replace("-", null), true, out value);
 
-            // 对数值类型枚举支持
             if (flag && Enum.TryParse(type, "N" + EnumItem, true, out value))
                 return true;
         }

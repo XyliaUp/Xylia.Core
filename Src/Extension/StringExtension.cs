@@ -37,12 +37,4 @@ public static partial class StringExtension
 	}
 
 	public static bool ToBool(this string s) => ToBool(s, out bool Result) && Result;
-
-	public static bool? ToBoolOrNull(this string s)
-	{
-		if (string.IsNullOrWhiteSpace(s)) return null;
-
-		if (ToBool(s, out bool Result)) return Result;
-		else return null;
-	}
 }

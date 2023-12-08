@@ -3,10 +3,10 @@
 namespace Xylia.Extension;
 public static partial class ClassExtension
 {
-    public static BindingFlags Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
+    public const BindingFlags Flags = BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public;
 
 
-    public static MemberInfo GetInfo<T>(this T Case, object Name, bool IgnoreCase = false)
+    public static MemberInfo GetMember<T>(this T Case, object Name, bool IgnoreCase = false)
     {
         #region init
         if (Name is null) return null;
@@ -31,7 +31,7 @@ public static partial class ClassExtension
         else throw new InvalidDataException();
     }
 
-    public static object GetValue<T>(this T Case, object Name, bool IgnoreCase = false) => Case.GetInfo(Name, IgnoreCase)?.GetValue(Case);
+    public static object GetValue<T>(this T Case, object Name, bool IgnoreCase = false) => Case.GetMember(Name, IgnoreCase)?.GetValue(Case);
 
     public static object GetValue(this MemberInfo member, object obj = null)
     {

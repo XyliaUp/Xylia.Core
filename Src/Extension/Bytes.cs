@@ -53,7 +53,6 @@ public static class Bytes
 	}
 
 
-
 	public static string UnCompress(this string Cipher)
 	{
 		if (string.IsNullOrWhiteSpace(Cipher))

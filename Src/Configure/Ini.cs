@@ -5,10 +5,10 @@ using Vanara.PInvoke;
 namespace Xylia.Configure;
 public class Ini
 {
-	public static Ini Instance => new();
-
 	#region Constructor
-	public string path;
+	public static Ini Instance { get; } = new();
+
+	private string path;
 
 	public Ini(string path = null) => this.path = path ?? PathDefine.DefaultPath;
 	#endregion
